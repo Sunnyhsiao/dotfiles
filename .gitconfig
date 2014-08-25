@@ -1,0 +1,16 @@
+[user]
+	name = SUNNYHSIAO
+	email = SUNNYHSIAO@kkbox.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	log = auto
+	ui = true
+[push]
+	default = simple
+[alias]
+	st = status
+	co = checkout
+[apply]
+	whitespace = nowarn
