@@ -18,6 +18,6 @@ minutes_since_last_commit=$((minutes_since_last_commit%60));
 echo "${hours_since_last_commit}h${minutes_since_last_commit}m ";
 }
  
-PS1="\[\e[0:35m\]\t \[\e[0;35m\]\h#\[\033[0m\][\[\e[0;32m\]\u\[\[\033[1;32m\]\w\[\033[0m\]] \[\033[0m\]\[\033[1;36m\]\$(git_branch)\[\033[0;33m\]\$(git_since_last_commit)\[\033[0m\]$ "
+PS1="\[\e[0:31m\]\t \[\e[0;35m\]\h#\[\033[0m\][\[\e[0;32m\]\u\[\[\033[1;32m\]\w\[\033[0m\]] \[\033[0m\]\[\033[1;36m\]\$(git_branch)\[\033[0;33m\]\$(git_since_last_commit)\[\033[0m\]$ "
 
 
