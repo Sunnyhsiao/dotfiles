@@ -1,6 +1,6 @@
 [user]
-	name = Sunny
-	email = sunny81715@gmail.com
+    name = Sunny
+    email = sunny81715@gmail.com
 [color]
 	diff = auto
 	status = auto
@@ -13,6 +13,6 @@
 	br = branch
 	st = status
     co = checkout
-    cim = commit
+    com = commit
 [apply]
 	whitespace = nowarn
