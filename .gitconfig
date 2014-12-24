@@ -12,6 +12,7 @@
 [alias]
 	br = branch
 	st = status
-	co = checkout
+    co = checkout
+    cim = commit
 [apply]
 	whitespace = nowarn
