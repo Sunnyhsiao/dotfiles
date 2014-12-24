@@ -1,0 +1,70 @@
+# vim: set filetype=vim
+
+# Basics
+set line-graphics = yes
+set vertical-split = false
+set commit-order = date
+
+# Main-View
+set main-view = \
+    line-number:yes,interval=5,width=5 \
+    date:default \
+    author:full,width=12 \
+    id:yes \
+    commit-title:yes,graph=yes,refs=yes,overflow=yes
+
+# Stash-View
+set stash-view = \
+    line-number:yes,interval=1,width=5 \
+    date:default \
+    author:full,width=12 \
+    id:yes \
+    commit-title:yes,graph=yes,refs=yes,overflow=yes
+
+# Status-View
+set status-view = \
+    line-number:yes,interval=1,width=5 \
+    status:long \
+    file-name:auto
+
+# Blame-View
+set blame-view = \
+    line-number:yes,interval=1,width=5 \
+    date:default \
+    author:full,width=12 \
+    id:yes \
+    text:yes
+
+# Colors
+color cursor white color236
+color commit green color234
+color main-commit red red
+color pp-refs red color234
+color diff-stat white color234
+color diff-index cyan color234
+
+# Bindings - Generic
+bind generic <Ctrl-b> scroll-page-up
+bind generic <Ctrl-f> scroll-page-down
+
+# Binding - Main
+bind main P !?git pull
+bind main U !?git push
+bind main V !?git revert %(commit)
+bind main C !@?git cherry-pick %(commit)
+bind main M !?git commit --amend
+bind main T !?git stash %(commit)
+
+# Bindings - Stash
+bind stash P !?git stash pop %(stash)    # Pop the stash
+bind stash a !?git stash apply %(stash)  # Apply the stash
+bind stash K !?git stash drop %(stash)   # Drop the stash
+
+# Bindings - Status
+bind status C !?git commit -m "%(prompt)"
+bind status T !sh -c "php -l %(file); phpcs %(file)"
+bind status V !git df %(file)
+
+# Bindings - Stage
+bind stage T !sh -c "php -l %(file); phpcs %(file)"
+bind stage V !git df %(file)
