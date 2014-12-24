@@ -59,12 +59,14 @@ Bundle 'ervandew/supertab'
 Bundle 'mattn/emmet-vim'
 Bundle 'wincent/Command-T'
 Bundle '2072/PHP-Indenting-for-VIm'
+
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'vim-scripts/phpfolding.vim'
 Bundle 'bling/vim-airline'
 Bundle 'edkolev/tmuxline.vim'
 filetype plugin indent on " required!
 
+"上面的空行代表下面開始的是自己後來裝的
 "安裝某些Bundle後的額外設定
 "php foldeing開合方式:za
 let php_folding = 1 "php folding設定: 開啟 *.php 時自動執行folding
