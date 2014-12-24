@@ -1,6 +1,6 @@
 export LC_ALL=zh_TW.UTF-8
 export LANG=zh_TW
-
+export PATH="$HOME/bin:$PATH"
 
 function git_branch {
 ref=$(git symbolic-ref HEAD 2> /dev/null) || return;
