@@ -3,7 +3,7 @@ export LANG=zh_TW
 export PATH="$HOME/bin:$PATH"
 export TERM="screen-256color"
 export CLICOLOR='true'
-export LSCOLORS="gxdxcxexbxegbeabagacad"
+export LSCOLORS="exdxcxexbxegbeabagacad"
 
 function git_branch {
 ref=$(git symbolic-ref HEAD 2> /dev/null) || return;
