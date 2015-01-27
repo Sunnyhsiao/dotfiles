@@ -5,6 +5,7 @@ export TERM="screen-256color"
 export CLICOLOR='true'
 export LSCOLORS="exdxcxexbxegbeabagacad"
 
+#alias grep='grep --color=auto'
 alias grep='grep --color'
 # For colourful man pages (CLUG-Wiki style)
 export LESS_TERMCAP_mb=$'\E[01;31m'
