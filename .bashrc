@@ -1,12 +1,14 @@
 export LC_ALL=zh_TW.UTF-8
 export LANG=zh_TW
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.bin:$PATH"
 export TERM="screen-256color"
 export CLICOLOR='true'
 export LSCOLORS="exdxcxexbxegbeabagacad"
 
 #alias grep='grep --color=auto'
 alias grep='grep --color'
+alias composer="php -d allow_url_fopen=1 ~/bin/composer"
+
 # For colourful man pages (CLUG-Wiki style)
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
