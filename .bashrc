@@ -4,6 +4,7 @@ export PATH="$HOME/bin:$HOME/.bin:$PATH"
 export TERM="screen-256color"
 export CLICOLOR='true'
 export LSCOLORS="exdxcxexbxegbeabagacad"
+source "/net/account/users/sunnyhsiao/dotfiles/bash-it-uselist/git.completion.bash"
 
 #alias grep='grep --color=auto'
 alias grep='grep --color'
