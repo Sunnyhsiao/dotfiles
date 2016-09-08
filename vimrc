@@ -72,7 +72,28 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'vim-scripts/phpfolding.vim'
 Bundle 'bling/vim-airline'
 Bundle 'edkolev/tmuxline.vim'
+Bundle 'scrooloose/syntastic'
 filetype plugin indent on " required!
+
+"scrooloose/syntastic 語法檢查設定
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_auto_jump = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_enable_highlighting = 1
+let g:syntastic_php_checkers = ['phpcs', 'phpmd', 'php']
+let g:syntastic_html_tidy_ignore_errors = [
+	\ "proprietary attribute ",
+	\ "trimming empty <", "unescaped &",
+	\ "lacks \"action",
+	\ "is not recognized!",
+	\ "discarding unexpected "
+\ ]
+
+" Configure vim-airline extension
+let g:airline#extensions#syntastic#enabled = 1
 
 "上面的空行代表下面開始的是自己後來裝的
 "安裝某些Bundle後的額外設定
