@@ -35,12 +35,20 @@ autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
+"底下這個為測試程式碼，按F2(不用按fn鍵，就可以在底下欄位看到echo的東西，也不用重跑)
+"//參考範例 http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_1)
+" map 區別可參考 (http://yyq123.blogspot.tw/2010/12/vim-map.html)
+" map <F2> :echo 'Current time is ' . strftime('%c')<CR>
 map <C-t><C-t> :tabnew<CR>
 map <C-t><C-w> :tabclose<CR>
 map <S-L> gt
 map <S-H> gT
 vnoremap < <gv
 vnoremap > >gv
+"底下的參考網址:
+"http://hugedream.blogspot.tw/2010/05/vim.html，(Enter好像會抓不到)
+nmap <F4> :tabn <CR>
+nmap <F3> :tabp <CR>
 
 " Display space at the end
 highlight WhitespaceEOL ctermbg=red guibg=red
