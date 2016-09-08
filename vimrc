@@ -58,21 +58,20 @@ match WhitespaceEOL /\s\+$/
 filetype off " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'scrooloose/nerdtree'
-Bundle 'stephpy/vim-php-cs-fixer'
-Bundle 'tpope/vim-surround'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'ervandew/supertab'
-Bundle 'mattn/emmet-vim'
-Bundle 'wincent/Command-T'
-Bundle '2072/PHP-Indenting-for-VIm'
-
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'vim-scripts/phpfolding.vim'
-Bundle 'bling/vim-airline'
-Bundle 'edkolev/tmuxline.vim'
-Bundle 'scrooloose/syntastic'
+Plugin 'gmarik/vundle'
+Plugin 'scrooloose/nerdtree'
+Plugin 'stephpy/vim-php-cs-fixer'
+Plugin 'tpope/vim-surround'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'ervandew/supertab'
+Plugin 'mattn/emmet-vim'
+Plugin 'wincent/Command-T'
+Plugin '2072/PHP-Indenting-for-VIm'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'vim-scripts/phpfolding.vim'
+Plugin 'bling/vim-airline'
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'scrooloose/syntastic'
 filetype plugin indent on " required!
 
 "scrooloose/syntastic 語法檢查設定
@@ -100,4 +99,3 @@ let g:airline#extensions#syntastic#enabled = 1
 "php foldeing開合方式:za
 let php_folding = 1 "php folding設定: 開啟 *.php 時自動執行folding
 autocmd BufWrite *.php :EnablePHPFolds<CR> "php folding設定: 存檔時重新解析一遍 php fold 的位置
-
