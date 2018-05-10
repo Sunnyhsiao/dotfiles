@@ -56,9 +56,10 @@ match WhitespaceEOL /\s\+$/
 
 " Vundle
 filetype off " required!
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Plugin 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'stephpy/vim-php-cs-fixer'
 Plugin 'tpope/vim-surround'
