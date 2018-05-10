@@ -8,6 +8,8 @@ source "/net/account/users/sunnyhsiao/dotfiles/bash-it-uselist/git.completion.ba
 
 #alias grep='grep --color=auto'
 alias grep='grep --color'
+# https://n.sfs.tw/content/index/11080 (ls 說明參考網址)
+alias ls='ls --color=auto'
 alias composer="php -d allow_url_fopen=1 ~/bin/composer"
 
 # For colourful man pages (CLUG-Wiki style)
