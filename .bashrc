@@ -40,8 +40,9 @@ echo "${hours_since_last_commit}h${minutes_since_last_commit}m ";
 PS1="\[\e[0;35m\]\h#\[\033[0m\][\[\e[0;32m\]\u\[\[\033[1;32m\]\w\[\033[0m\]] \[\033[0m\]\[\033[1;36m\]\$(git_branch)\[\033[0;33m\]\$(git_since_last_commit)\[\033[0m\]$ "
 
 #bash-it
+#不過目前應該沒有用到，(至少主題沒有)，自己要去載來安裝
 # Path to the bash it configuration
-export BASH_IT="/home/sunnyhsiao/.bash_it"
+export BASH_IT="/home/sunnyhsiao/dotfiles/bash-it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
@@ -75,4 +76,4 @@ export SCM_CHECK=true
 # export BASH_IT_AUTOMATIC_RELOAD_AFTER_CONFIG_CHANGE=1
 
 # Load Bash It
-source $BASH_IT/bash_it.sh
+source "$BASH_IT"/bash_it.sh
