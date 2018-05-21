@@ -9,7 +9,10 @@ source "/net/account/users/sunnyhsiao/dotfiles/bash-it-uselist/git.completion.ba
 #alias grep='grep --color=auto'
 alias grep='grep --color'
 # https://n.sfs.tw/content/index/11080 (ls 說明參考網址)
-alias ls='ls --color=auto'
+# 看起來“ - color = tty”不能在BSD OS中使用，例如MacOS，而如果使用“ - G”則可以。
+# (visual studio code 目前我的環境只能用-G)
+# https://endoyuta.com/2015/05/13/mac-yosemite-ls/
+alias ls='ls -G'
 alias composer="php -d allow_url_fopen=1 ~/bin/composer"
 
 # For colourful man pages (CLUG-Wiki style)
