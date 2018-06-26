@@ -14,6 +14,7 @@ alias grep='grep --color'
 # https://endoyuta.com/2015/05/13/mac-yosemite-ls/
 alias ls='ls -G'
 alias composer="php -d allow_url_fopen=1 ~/bin/composer"
+#alias phpcs="php -d allow_url_fopen=1 ~/dotfiles/PHP_CodeSniffer/bin/phpcs"
 
 # For colourful man pages (CLUG-Wiki style)
 export LESS_TERMCAP_mb=$'\E[01;31m'
