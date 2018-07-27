@@ -55,6 +55,11 @@ highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
 
 " Vundle
+" setup steps:
+" 1.確定有裝curl & git
+" 2.安裝vundle:$git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" 3.確認設定無誤以後，Launch vim and run :PluginInstall
+" 參考來源: https://github.com/VundleVim/Vundle.vim
 filetype off " required!
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -99,4 +104,7 @@ let g:airline#extensions#syntastic#enabled = 1
 "安裝某些Bundle後的額外設定
 "php foldeing開合方式:za
 let php_folding = 1 "php folding設定: 開啟 *.php 時自動執行folding
-autocmd BufWrite *.php :EnablePHPFolds<CR> "php folding設定: 存檔時重新解析一遍 php fold 的位置
+
+"php folding設定: 存檔時重新解析一遍 php fold 的位置
+"因為會有error先關掉
+ "autocmd BufWrite *.php :EnablePHPFolds<CR>
