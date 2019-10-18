@@ -4,7 +4,8 @@ export PATH="$HOME/bin:$HOME/.bin:$PATH"
 export TERM="screen-256color"
 export CLICOLOR='true'
 export LSCOLORS="exdxcxexbxegbeabagacad"
-source "/net/account/users/sunnyhsiao/dotfiles/bash-it-uselist/git.completion.bash"
+export BASH_SILENCE_DEPRECATION_WARNING=1 # 關閉macOS Catalina 預設zsh警告
+source "/Users/sunnyhsiao/dotfiles/bash-it-uselist/git.completion.bash"
 
 #alias grep='grep --color=auto'
 alias grep='grep --color'
@@ -13,8 +14,12 @@ alias grep='grep --color'
 # (visual studio code 目前我的環境只能用-G)
 # https://endoyuta.com/2015/05/13/mac-yosemite-ls/
 alias ls='ls -G'
-alias composer="php -d allow_url_fopen=1 ~/bin/composer"
-#alias phpcs="php -d allow_url_fopen=1 ~/dotfiles/PHP_CodeSniffer/bin/phpcs"
+#alias composer="php -d allow_url_fopen=1 ~/bin/composer" 目前這台電腦用brew install 安裝，就不用另外寫了
+#git clone PHP_CodeSniffer以後記得要開啟
+#可以用 --standard=PSR2 就只看有沒有follow PSR2的規則， 目前我的預設值已經設定為PSR2了
+#可參考https://clouding.city/php-phpcs-phpcbf/
+alias phpcs="php -d allow_url_fopen=1 ~/dotfiles/PHP_CodeSniffer/bin/phpcs"
+alias phpcbf="php -d allow_url_fopen=1 ~/dotfiles/PHP_CodeSniffer/bin/phpcbf"
 
 # For colourful man pages (CLUG-Wiki style)
 export LESS_TERMCAP_mb=$'\E[01;31m'
@@ -46,7 +51,7 @@ PS1="\[\e[0;35m\]\h#\[\033[0m\][\[\e[0;32m\]\u\[\[\033[1;32m\]\w\[\033[0m\]] \[\
 #bash-it
 #不過目前應該沒有用到，(至少主題沒有)，自己要去載來安裝
 # Path to the bash it configuration
-export BASH_IT="/home/sunnyhsiao/dotfiles/bash-it"
+export BASH_IT="/Users/sunnyhsiao/dotfiles/bash-it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
