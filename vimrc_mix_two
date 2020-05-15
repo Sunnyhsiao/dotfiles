@@ -45,13 +45,18 @@ set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,big5,gb2312,latin1
 set t_Co=256
 set ruler
+"It tells Vim to look for a tags file in the directory of the current file, in the current directory and up and up until your $HOME : https://stackoverflow.com/questions/11975316/vim-ctags-tag-not-found
+set tags=./tags,tags;$HOME
+
 color darkblue
 "set clipboard=unnamed
 "Try 了上面的 但是好像沒有用?
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-au BufRead *.php set ft=php.html  "這兩行是想要讓編輯php時編輯html也能自動對齊,但好像沒用...
-au BufNewFile *.php set ft=php.html
 
+"自動完成ctrl+x, ctrl+o (可看底下phpcomplete網址範例)
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP "https://www.simplified.guide/vim/auto-complete-php
+au BufRead *.php set ft=php.html  "這兩行是想要讓編輯php時編輯html也能自動對齊
+au BufNewFile *.php set ft=php.html
 syntax on "語法上色
 
 autocmd bufwritepost .vimrc source ~/.vimrc
@@ -60,10 +65,14 @@ autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
-"底下這個為測試程式碼，按F2(不用按fn鍵，就可以在底下欄位看到echo的東西，也不用重跑)
+"底下這個為測試程式碼，按F2(要按fn鍵，就可以在底下欄位看到echo的東西，也不用重跑)
 "//參考範例 http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_1)
 " map 區別可參考 (http://yyq123.blogspot.tw/2010/12/vim-map.html)
-" map <F2> :echo 'Current time is ' . strftime('%c')<CR>
+"map <F2> :echo 'Current time is ' . strftime('%c')<CR>
+"
+"按F2 自動跑 php filename.php
+"參考 https://stackoverflow.com/questions/5622236/run-php-file-from-within-vim
+map <F2> :!php %
 map <C-t><C-t> :tabnew<CR>
 map <C-t><C-w> :tabclose<CR>
 map <S-L> gt
@@ -103,6 +112,7 @@ Plugin 'vim-scripts/phpfolding.vim'
 Plugin 'bling/vim-airline'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'scrooloose/syntastic'
+call vundle#end()
 filetype plugin indent on " required!
 
 "scrooloose/syntastic 語法檢查設定
@@ -141,7 +151,8 @@ let php_folding = 1 "php folding設定: 開啟 *.php 時自動執行folding
 "http://nano-chicken.blogspot.com/2014/07/vim-statusline.html
 set statusline=
 set statusline+=%1*\[%n]                                  "buffernr
-set statusline+=%2*\ %<%F\                                "File+path
+set statusline+=%2*\ %F\                                "File
+"set statusline+=%2*\ %<%F\                                "File+path
 set statusline+=%3*\ %=\ %{''.(&fenc!=''?&fenc:&enc).''}\  "Encoding
 set statusline+=%4*\ %{(&bomb?\",BOM\":\"\")}\            "Encoding2
 set statusline+=%5*\ %{&ff}\                              "FileFormat (dos/unix..)

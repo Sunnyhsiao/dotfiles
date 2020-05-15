@@ -38,7 +38,7 @@ set blame-view = \
 # Colors
 color cursor white color236
 color commit green color234
-color main-commit red red
+color main-commit default color234
 color pp-refs red color234
 color diff-stat white color234
 color diff-index cyan color234
